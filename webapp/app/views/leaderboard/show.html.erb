@@ -1,0 +1,34 @@
+<h1 class="page-header">Score Card</h1>
+<p>Click your team name below for instructions on getting the code.</p>
+<p>
+  Ruby docs:
+  <%= link_to 'Quick Ref', '/docs/www.zenspider.com/Languages/Ruby/QuickRef.html' %> |
+  <%= link_to '2.1.0 Core', '/docs/ruby_2_1_0_core/' %> |
+  <%= link_to '2.1.0 Stdlib', '/docs/ruby_2_1_0_stdlib/' %>
+</p>
+  <table class="table table-striped leaderboard table-bordered table-condensed small" style="width:auto">
+    <thead>
+      <tr>
+        <th></th>
+        <%= render_numeric_cell @board.hole_names[0],   tag: :th %>
+      </tr>
+      <tr class="warning">
+        <th>Length</th>
+        <%= render_numeric_cell @board.hole_lengths[0] %>
+      </tr>
+      <tr class="info">
+        <th>Par</th>
+        <%= render_numeric_cell @board.pars[0] %>
+      </tr>
+      <tr class="success">
+        <th>Best</th>
+        <%= render_numeric_cell @board.bests[0] %>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @board.teams -%>
+    </tbody>
+  </table>
+<script type="text/javascript" charset="utf-8">
+  setTimeout(function(){ location.reload() }, 30000)
+</script>

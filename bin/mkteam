@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -o nounset
+set -o errexit
+
+source .config
+
+if [[ $# -lt 1 ]]; then
+  echo "USAGE: $0 TEAMNAME"
+  exit -1
+fi
+
+TEAMNAME=$1
+REPO_DIR=$TEAM_REPO_BASE_DIR/$TEAMNAME
+REPO_PATH=$REPO_DIR/codegolf.git
+
+mkdir -p $REPO_DIR
+git clone --bare $MASTER_REPO_DIR $REPO_PATH
+cp git_hooks/* $REPO_PATH/hooks
+chmod +x -R $REPO_PATH/hooks/*
+sudo chown -R golfer:golfer $REPO_PATH
+cd $MASTER_REPO_DIR
+git remote add $TEAMNAME $REPO_PATH
+
+cd ../webapp
+rake team:create name=$TEAMNAME

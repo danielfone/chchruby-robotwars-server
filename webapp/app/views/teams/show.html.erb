@@ -1,0 +1,31 @@
+<h1 class="page-header">
+  Team <%= @team.name.inspect %>
+</h1>
+
+<h3>Password-based Repo</h3>
+<p>
+  <code>
+    <%= "git clone ssh://golfer@#{request.host}/codegolf/#{@team.name}/codegolf.git" %>
+  </code>
+</p>
+<p>
+  password <code>golfer</code>
+</p>
+
+<h3>Key-based Repo</h3>
+<p>
+  Save <%= link_to 'this private key', '/codegolf.id_rsa' %> into ~/.ssh/codegolf.id_rsa
+  and add the following into ~/.ssh/config
+  <pre>
+Host codegolf
+  Hostname <%= request.host %>
+  User golfer
+  IdentityFile ~/.ssh/codegolf.id_rsa
+</pre>
+</p>
+<p>
+  Then you can use
+  <code>
+    <%= "git clone ssh://codegolf/codegolf/#{@team.name}/codegolf.git" %>
+  </code>
+</p>

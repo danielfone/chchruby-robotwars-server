@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -o errexit
+
+export RAILS_ENV=production
+
+REPOPATH=`pwd`
+TMPDIR=`mktemp -d`
+TEAM=`echo $REPOPATH | cut -d'/' -f3`
+cd $TMPDIR
+git clone $REPOPATH $TMPDIR
+cp -r /vagrant/master_repo/test $TMPDIR
+echo
+echo "You are team $TEAM"
+source "$HOME/.rvm/scripts/rvm"
+cd /vagrant/webapp
+bundle exec rake team:score path=$TMPDIR name=$TEAM
+echo
+cd ..
+rm -fr $TMPDIR
