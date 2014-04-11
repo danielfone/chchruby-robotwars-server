@@ -1,8 +1,5 @@
 #!/bin/bash
 
-set -o nounset
-set -o errexit
-
 source .config
 
 if [[ $# -lt 1 ]]; then

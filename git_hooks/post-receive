@@ -4,6 +4,11 @@ set -o errexit
 
 export RAILS_ENV=production
 
+echo "Running post receive"
+sleep 1
+
+exit 0
+
 REPOPATH=`pwd`
 TMPDIR=`mktemp -d`
 TEAM=`echo $REPOPATH | cut -d'/' -f3`

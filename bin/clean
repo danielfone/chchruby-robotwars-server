@@ -1,17 +1,11 @@
 #!/bin/bash
 
-set -o nounset
-set -o errexit
-
 source .config
 
-read -p "Clean build code [y/N]? " choice
+read -p "Remove $BASE_PATH [y/N]? " choice
+[[ $choice == 'y' ]] && sudo rm -fr $BASE_PATH
 
-[[ $choice == 'y' ]] || exit -1
-
-echo "Removing $MASTER_REPO_DIR"
-rm -fr $MASTER_REPO_DIR
-echo "Removing $TEAM_REPO_BASE_DIR/*"
-sudo rm -fr $TEAM_REPO_BASE_DIR/*
-cd webapp
-rake db:setup
+#echo "Removing $TEAM_REPO_BASE_DIR/*"
+#sudo rm -fr $TEAM_REPO_BASE_DIR/*
+#cd webapp
+#rake db:setup

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+source .config
+
+# Setup temp repo from working dir
+TMP_REPO=`mktemp -d /tmp/robotwars.XXXXXXXXX` || exit -1
+cp -r arena/* $TMP_REPO
+cd $TMP_REPO
+git init
+git add -A
+git commit -m "Robot wars"
+cd -
+
+# Setup bare repo to acts as remote
+rm -fr $MASTER_REPO
+mkdir -p $MASTER_REPO
+git clone --bare $TMP_REPO $MASTER_REPO
+cp git_hooks/* $MASTER_REPO/hooks
+chmod -R +x $MASTER_REPO/hooks/*
+sudo chown -R git $MASTER_REPO
+
+rm -fr $TMP_REPO
+
+#cd ../webapp
+#rake course:load
