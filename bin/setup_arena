@@ -3,7 +3,7 @@
 source .config
 
 # Setup temp repo from working dir
-TMP_REPO=`mktemp -d /tmp/robotwars.XXXXXXXXX` || exit -1
+TMP_REPO=`mktemp -d $BASE_PATH/robotwars.XXXXXXXXX` || exit -1
 cp -r arena/* $TMP_REPO
 cd $TMP_REPO
 git init
