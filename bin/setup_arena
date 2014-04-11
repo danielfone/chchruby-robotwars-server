@@ -3,6 +3,7 @@
 source .config
 
 # Setup temp repo from working dir
+mkdir -p $BASE_PATH
 TMP_REPO=`mktemp -d $BASE_PATH/robotwars.XXXXXXXXX` || exit -1
 cp -r arena/* $TMP_REPO
 cd $TMP_REPO

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source .config
+
+mkdir -p $MATCHES_PATH
+TMP_REPO=`mktemp -d $MATCHES_PATH/XXXXXXXXX` || exit -1
+cd $TMP_REPO
+git clone $MASTER_REPO .
+mkdir rounds
+rrobots --resolution "1600,900" --timeout 2000 bots/*.rb > rounds/round-x.1.txt
+rrobots --resolution "1600,900" --timeout 2000 bots/*.rb > rounds/round-x.2.txt
+rrobots --resolution "1600,900" --timeout 2000 bots/*.rb > rounds/round-x.3.txt

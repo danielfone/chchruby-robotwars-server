@@ -10,6 +10,14 @@ Basic Repo for ChChRuby Robot Wars
 
     # Now go make your own!
 
+Tournament Rules
+================
+
+We'll be playing with:
+
+  --resolution "1600,900" --timeout 2000
+  TODO: add more info
+
 Possible Install Issues
 =======================
 
