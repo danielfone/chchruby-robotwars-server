@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source .config
+
+# Setup bare repo to acts as remote
+sudo cp git_hooks/* $MASTER_REPO/hooks
+chmod -R +x $MASTER_REPO/hooks/*
+sudo chown -R git $MASTER_REPO

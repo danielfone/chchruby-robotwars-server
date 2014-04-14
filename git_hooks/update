@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+def fail(message)
+  STDERR.puts message
+  exit 1
+end
+
+ref, old_rev, new_rev = ARGV
+
+# Don't allow pushing to master
+if ref == 'refs/heads/master'
+  fail "Don't push to master. Branch and push that instead please."
+end
