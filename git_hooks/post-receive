@@ -1,4 +1,15 @@
 #!/usr/bin/env ruby
 
-puts "post-receive"
-puts STDIN.read
+require 'tmpdir'
+
+STDIN.readlines.each do |line|
+  old_rev, new_rev, ref = line.split
+  branch = ref.split('/')[2]
+
+  puts "Auto-merging #{branch} into master..."
+  Dir.mktmpdir do |dir|
+    ENV['GIT_WORK_TREE'] = dir
+    `git checkout master && git merge refs/heads/#{branch}`
+  end
+
+end

@@ -18,6 +18,15 @@ We'll be playing with:
   --resolution "1600,900" --timeout 2000
   TODO: add more info
 
+    $ git clone git://[ip]/robotwars-arena
+    $ git checkout -b [your-team-name]
+    $ git push --set-upstream origin [your-team-name]
+    # make and commit your changes
+    $ git push
+    $ git pull origin master
+    # make and commit your changes
+    # repeat
+
 Possible Install Issues
 =======================
 

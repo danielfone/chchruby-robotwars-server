@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-puts "pre-receive"
-puts STDIN.read
+#puts "pre-receive"
+#puts STDIN.read
