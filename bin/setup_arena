@@ -18,6 +18,9 @@ mkdir -p $MASTER_REPO
 git clone --bare $TMP_REPO $MASTER_REPO
 cp git_hooks/* $MASTER_REPO/hooks
 chmod -R +x $MASTER_REPO/hooks/*
+cd $MASTER_REPO
+git config receive.denyNonFastForwards true
+git config receive.denyDeletes true
 sudo chown -R git $MASTER_REPO
 
 rm -fr $TMP_REPO
