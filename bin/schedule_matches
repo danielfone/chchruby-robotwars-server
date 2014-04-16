@@ -1,0 +1,14 @@
+#!/bin/bash
+
+source .config
+
+WARNING=5
+INTERVAL=10
+#INTERVAL=1200 # 20 minutes
+
+echo "Scheduling matches every $(($INTERVAL/60)) minutes..."
+while sleep $(($INTERVAL-$WARNING)); do
+  echo "Next match in $WARNING seconds!"
+  sleep $WARNING
+  bin/run_matches
+done
