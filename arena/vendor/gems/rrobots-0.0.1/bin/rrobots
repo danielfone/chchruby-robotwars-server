@@ -48,7 +48,7 @@ class OptionsParser
     return options
   end
 end
-    
+
 def run_out_of_gui(battlefield)
   $stderr.puts 'match ends if only 1 bot/team left or dots get here-->|'
 
@@ -102,8 +102,9 @@ def print_outcome(battlefield)
   puts "seed :         #{battlefield.seed}"
   puts
   puts "robots :"
-  battlefield.robots.each do |robot|
+  battlefield.robots.sort_by(&:score).each do |robot|
     puts "  #{robot.name}:"
+    puts "    score: #{'%.1f' % robot.score}"
     puts "    damage_given: #{'%.1f' % robot.damage_given}"
     puts "    damage_taken: #{'%.1f' % (100 - robot.energy)}"
     puts "    kills:        #{robot.kills}"
@@ -145,8 +146,8 @@ $stdout.sync = true
 
 options = OptionsParser.parse!(ARGV)
 robots = ARGV
-battlefield = setup_battlefield(options, robots)  
-  
+battlefield = setup_battlefield(options, robots)
+
 if options.gui
   run_in_gui(battlefield, options.resolution[0], options.resolution[1])
 else

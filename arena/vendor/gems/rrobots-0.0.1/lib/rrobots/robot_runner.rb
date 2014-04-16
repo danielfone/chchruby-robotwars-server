@@ -234,4 +234,12 @@ class RobotRunner
     @robot.class.name
   end
 
+  def score
+    (damage_given.to_f + 1) / (damage_taken.to_f + 1)
+  end
+
+  def damage_taken
+    100 - @robot.energy
+  end
+
 end
