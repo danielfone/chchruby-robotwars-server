@@ -1,31 +1,52 @@
-Basic Repo for ChChRuby Robot Wars
-==================================
+Getting started
+===============
+
+Presumably you've cloned the repo by now.
 
     # Install the project dependencies
     $ gem install bundler
     $ bundle install
 
     # Run the sample robots
-    $ rrobots bots/*.rb
+    $ bundle exec rrobots bots/*.rb
 
-    # Now go make your own!
+At this point, you should witness a battle between our two default AIs.
+
+Now we'll set up the git workflow.
+
+    $ git checkout -b [your-team-name]
+    $ git push --set-upstream origin [your-team-name]
+
+Copy one of the existing files in the bots/ directory and make your own.
+Please limit yourself to one file. Classname must match filename.
+Once you've tested your bot locally, you can push your code in time for the
+tournament (see below). Only ever push to your branch, it will be automatically
+merged into master on the server.
+
+    $ git push
+
+After the tournament, you might want to pull everyone's code - this is open source
+after all!
+
+    $ git pull origin master
+
+Rinse and repeat.
 
 Tournament Rules
 ================
 
-We'll be playing with:
+Tournaments will be automatically run every 20 minutes with whatever code has
+been pushed at the time.
 
-  --resolution "1600,900" --timeout 2000
-  TODO: add more info
+We'll run with the arguments:
 
-    $ git clone git://[ip]/robotwars-arena
-    $ git checkout -b [your-team-name]
-    $ git push --set-upstream origin [your-team-name]
-    # make and commit your changes
-    $ git push
-    $ git pull origin master
-    # make and commit your changes
-    # repeat
+    --resolution "1600,900" --timeout 2500
+
+Bots are scored on a kind of KDR (Kill/Deaths Ratio) but with energy instead of lives.
+
+    def score
+      (damage_given.to_f + 1) / (damage_taken.to_f + 1)
+    end
 
 Possible Install Issues
 =======================
@@ -37,7 +58,8 @@ https://github.com/jlnr/gosu/wiki/Getting-Started-on-Linux
 
 You may need to install a few packages
 
-### Useful resources: ###
+Useful resources:
+=================
 
 http://rubydoc.info/gems/rrobots/0.0.1/frames
 
@@ -45,7 +67,9 @@ https://github.com/ralreegorganon/rrobots
 
     $ bundle open rrobots # Read the source Luke!
 
-### Some methods...: ###
+Some methods...
+===============
+
     battlefield_height  #the height of the battlefield
     battlefield_width   #the width of the battlefield
     energy              #your remaining energy (if this drops below 0 you are dead)
