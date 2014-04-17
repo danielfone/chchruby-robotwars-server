@@ -1,5 +1,5 @@
 class AddTotalToTeam < ActiveRecord::Migration
   def change
-    add_column :teams, :total, :integer, index: true
+    add_column :teams, :total, :decimal, index: true
   end
 end

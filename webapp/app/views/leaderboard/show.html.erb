@@ -6,6 +6,7 @@
       <%- @board.matches.each do |match| %>
         <th><%= link_to "Match #{match.id}", match.path %></th>
       <%- end -%>
+      <th>Total</th>
     </tr>
   </thead>
   <tbody>

@@ -1,7 +1,7 @@
 class Leaderboard
 
   def teams
-    Team.order(:total)
+    Team.order('total DESC')
   end
 
   def matches

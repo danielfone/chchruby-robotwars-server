@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140417044800) do
     t.text     "scores"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total"
+    t.decimal  "total"
   end
 
 end

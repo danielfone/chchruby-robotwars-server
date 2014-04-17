@@ -1,4 +1,7 @@
 <tr>
   <td><%= team.name %></td>
-  <%= render_numeric_cell team.scores -%>
+  <%- @board.matches.each do |match| %>
+    <td class="numeric"><%= team.scores[match.id.to_s].round(2) %></td>
+  <%- end -%>
+  <td class="numeric calculated"><%= team.total.round(2) %></td>
 </tr>
