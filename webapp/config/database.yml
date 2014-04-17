@@ -1,13 +1,7 @@
 development:
   adapter: postgresql
   database: codegolf_development
-  pool: 5
-  timeout: 5000
-  user: codegolf
 
 production:
   adapter: postgresql
   database: codegolf_production
-  pool: 5
-  timeout: 5000
-  user: codegolf

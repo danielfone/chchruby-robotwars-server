@@ -1,0 +1,66 @@
+
+winner_is:     [Killer]
+winner_energy: [88.0]
+elapsed_ticks: 752
+seed :         1397651467
+
+robots :
+  Duck:
+    score: 0.7
+    damage_given: 63.0
+    damage_taken: 102.0
+    kills:        0
+  Seeker:
+    score: 1.0
+    damage_given: 96.0
+    damage_taken: 108.0
+    kills:        1
+  Killer:
+    score: 4.9
+    damage_given: 63.0
+    damage_taken: 12.0
+    kills:        1
+
+winner_is:     [Killer]
+winner_energy: [100.0]
+elapsed_ticks: 507
+seed :         1397651493
+
+robots :
+  Duck:
+    score: 0.8
+    damage_given: 81.0
+    damage_taken: 106.5
+    kills:        0
+  Seeker:
+    score: 0.9
+    damage_given: 88.5
+    damage_taken: 108.0
+    kills:        1
+  Killer:
+    score: 46.0
+    damage_given: 45.0
+    damage_taken: 0.0
+    kills:        1
+
+winner_is:     [Killer]
+winner_energy: [100.0]
+elapsed_ticks: 530
+seed :         1397651516
+
+robots :
+  Seeker:
+    score: 0.8
+    damage_given: 82.5
+    damage_taken: 108.0
+    kills:        1
+  Duck:
+    score: 0.9
+    damage_given: 81.0
+    damage_taken: 100.5
+    kills:        0
+  Killer:
+    score: 46.0
+    damage_given: 45.0
+    damage_taken: 0.0
+    kills:        1
