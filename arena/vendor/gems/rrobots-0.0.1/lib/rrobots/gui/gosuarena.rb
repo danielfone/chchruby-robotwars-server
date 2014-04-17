@@ -2,8 +2,8 @@ require 'gosu'
 
 BIG_FONT = 'Courier New'
 SMALL_FONT = 'Courier New'
-COLORS = ['white', 'blue', 'yellow', 'red', 'lime']
-FONT_COLORS = [0xffffffff, 0xff4444ff, 0xfffff706, 0xffff0613, 0xff00ff04]
+COLORS = ['yellow', 'red', 'lime', 'blue', 'white']
+FONT_COLORS = [0xfffff706, 0xffff0613, 0xff00ff04, 0xff0000ff, 0xffffffff]
 
 GosuRobot = Struct.new(:body, :gun, :radar, :speech, :info, :status, :color, :font_color)
 
