@@ -5,10 +5,11 @@ source .config
 WARNING=10
 INTERVAL=60
 #INTERVAL=1200 # 20 minutes
+#WARNING=180
 
 echo "Scheduling matches every $(($INTERVAL/60)) minutes..."
 while sleep $(($INTERVAL-$WARNING)); do
-  echo "Next match in $WARNING seconds!"
+  say "Next match in $(($WARNING)) minutes!"
   sleep $WARNING
   bin/run_matches
   echo "Done! Next match in $(($INTERVAL/60)) minutes..."
