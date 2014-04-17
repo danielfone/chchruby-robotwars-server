@@ -2,15 +2,19 @@
 
 source .config
 
-TIMEOUT="2500"
+TIMEOUT="1"
 RESOLUTION="1600,900"
 
 mkdir -p $MATCHES_PATH
 TMP_REPO=`mktemp -d $MATCHES_PATH/XXXXXXXXX` || exit -1
-cd $TMP_REPO
-git clone $MASTER_REPO .
-mkdir rounds
-CMD="bundle exec rrobots --resolution $RESOLUTION --timeout $TIMEOUT bots/*.rb"
-$CMD > rounds/round-x.1.txt
-$CMD > rounds/round-x.2.txt
-$CMD > rounds/round-x.3.txt
+
+pushd $TMP_REPO
+  git clone $MASTER_REPO .
+  CMD="bundle exec rrobots --resolution $RESOLUTION --timeout $TIMEOUT bots/*.rb"
+  $CMD > result.txt
+  $CMD >> result.txt
+  $CMD >> result.txt
+popd
+
+cd webapp
+bundle exec rake match:parse filename=$TMP_REPO/result.txt

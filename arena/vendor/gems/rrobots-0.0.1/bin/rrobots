@@ -109,6 +109,10 @@ def print_outcome(battlefield)
     puts "    damage_taken: #{'%.1f' % (100 - robot.energy)}"
     puts "    kills:        #{robot.kills}"
   end
+  puts
+  battlefield.robots.each do |robot|
+    puts "TEAM #{robot.name} = #{robot.score}"
+  end
 end
 
 def setup_battlefield(options, robots)
