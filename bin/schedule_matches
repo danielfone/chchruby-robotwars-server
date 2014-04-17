@@ -9,7 +9,7 @@ INTERVAL=60
 
 echo "Scheduling matches every $(($INTERVAL/60)) minutes..."
 while sleep $(($INTERVAL-$WARNING)); do
-  say "Next match in $(($WARNING)) minutes!"
+  say "Next match in $(($WARNING)) minutes"
   sleep $WARNING
   bin/run_matches
   echo "Done! Next match in $(($INTERVAL/60)) minutes..."
