@@ -2,7 +2,7 @@
 
 source .config
 
-TIMEOUT="1"
+TIMEOUT="2500"
 RESOLUTION="1600,900"
 
 mkdir -p $MATCHES_PATH
