@@ -2,7 +2,7 @@
 
 source .config
 
-INTERVAL=600 # 20 minutes
+INTERVAL=600 # 10 minutes
 WARNING=180
 
 echo "Scheduling matches every $(($INTERVAL/60)) minutes..."
