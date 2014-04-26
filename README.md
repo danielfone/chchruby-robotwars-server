@@ -1,5 +1,4 @@
-chchruby-robotwars
-==================
+**Warning**: I've only ever run this on my own laptop (OS X). If these instructions don't work for you, please let me know via Issue or (better) Pull Request.
 
     arena/          # This gets shipped to our players via git
     bin/            # Scripts for setting up and running things
@@ -40,5 +39,5 @@ Notes
     If there are ever any conflicts between branches,
     no-one will be able to push anymore.
   * The webapp/ is a bit of a mess. It's a direct copy + hack-n-slash from the
-    original codegolf Rails app.
+    original [codegolf](//github.com/danielfone/railscamp-codegolf) Rails app.
     There is some meaningful logic in [match.rake](webapp/lib/tasks/match.rake), but that's about all.
