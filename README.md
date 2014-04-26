@@ -11,8 +11,8 @@ Setup
 =====
 
   * Have a unprivileged `git` user
-  * Inspect the variables in .config
-  * Make sure you can run the rrobots command, see arena/README.md
+  * Inspect the variables in [.config](.config)
+  * Make sure you can run the rrobots command, see [arena/README.md](arena/README.md)
   * Setup the rails app in the usual way. `cd webapp; rake db:whatever`
 
 Workflow
@@ -31,7 +31,7 @@ In another tab:
 
 At this point, players should be able to visit the leaderboard page,
 see the endpoint for the git repository, clone the repo and push their bots.
-Tournaments will be run automatically at the frequency defined in bin/schedule_matches.
+Tournaments will be run automatically at the frequency defined in [bin/schedule_matches](bin/schedule_matches).
 
 Notes
 =====
@@ -41,4 +41,4 @@ Notes
     no-one will be able to push anymore.
   * The webapp/ is a bit of a mess. It's a direct copy + hack-n-slash from the
     original codegolf Rails app.
-    There is some meaningful logic in webapp/lib/tasks/match.rake, but that's about all.
+    There is some meaningful logic in [match.rake](webapp/lib/tasks/match.rake), but that's about all.
