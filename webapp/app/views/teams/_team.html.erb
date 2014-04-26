@@ -1,7 +1,7 @@
 <tr>
   <td><%= team.name %></td>
   <%- @board.matches.each do |match| %>
-    <td class="numeric"><%= team.scores[match.id.to_s].round(2) %></td>
+    <td class="numeric"><%= team.scores[match.id.to_s].try :round, 2 %></td>
   <%- end -%>
   <td class="numeric calculated"><%= team.total.round(2) %></td>
 </tr>
